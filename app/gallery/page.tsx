@@ -157,15 +157,16 @@ export default function GalleryPage() {
                         {content.description}
                       </p>
                       
-                      <Button 
-                        asChild
-                        className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white"
-                      >
-                        <Link href={content.link} className="flex items-center justify-center">
+ <Link href={content.link} passHref>
+ <Button
+ className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white"
+ >
+ <div className="flex items-center justify-center">
                           Explore {content.type === 'photo' ? 'Photos' : 'Videos'}
                           <ArrowRight className="ml-2 h-4 w-4" />
-                        </Link>
-                      </Button>
+ </div>
+ </Button>
+ </Link>
                     </div>
                   </CardContent>
                 </Card>

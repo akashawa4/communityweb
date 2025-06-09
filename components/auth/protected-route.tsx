@@ -21,7 +21,7 @@ export default function ProtectedRoute({
   requireAdmin = false,
   fallbackPath = '/login' 
 }: ProtectedRouteProps) {
-  const { isAuthenticated, user, isLoading, isAdmin } = useAuth();
+  const { isAuthenticated, user, isLoading, isAdmin, checkAdmin } = useAuth();
   const router = useRouter();
   const [showContent, setShowContent] = useState(false);
 
@@ -32,7 +32,7 @@ export default function ProtectedRoute({
         return;
       }
 
-      if (requireAdmin && !isAdmin()) {
+      if (requireAdmin && !checkAdmin()) {
         router.push('/');
         return;
       }
@@ -44,7 +44,7 @@ export default function ProtectedRoute({
 
       setShowContent(true);
     }
-  }, [isAuthenticated, user, isLoading, requireSubscription, requireAdmin, router, fallbackPath, isAdmin]);
+  }, [isAuthenticated, user, isLoading, requireSubscription, requireAdmin, router, fallbackPath, checkAdmin]);
 
   if (isLoading) {
     return (
@@ -61,7 +61,7 @@ export default function ProtectedRoute({
     return null; // Will redirect
   }
 
-  if (requireAdmin && !isAdmin()) {
+  if (requireAdmin && !checkAdmin()) {
     return null; // Will redirect
   }
 

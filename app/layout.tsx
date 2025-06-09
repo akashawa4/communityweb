@@ -2,6 +2,9 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
+// Assuming ProtectedRoute exists at this path
+import ProtectedRoute from '@/components/auth/protected-route';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -83,6 +86,8 @@ export default function RootLayout({
           }}
         />
       </head>
+      {/* Wrap protected routes with ProtectedRoute. Public routes remain outside. */}
+      {/* You'll need to adjust this based on your specific routing and auth implementation. */}
       <body className={`${inter.className} bg-community-background text-community-text antialiased`}>
         {children}
       </body>

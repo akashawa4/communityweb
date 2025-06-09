@@ -7,151 +7,151 @@ import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 
 export default function AboutUsPage() {
-  const values = [
-    {
-      icon: Heart,
-      title: 'Community First',
-      description: 'We believe in putting our Solapur community members at the center of everything we do.',
-      color: 'from-red-500 to-pink-500'
-    },
-    {
-      icon: Users,
-      title: 'Cultural Bridge',
-      description: 'Connecting our Solapur roots with our new life in Kolhapur through shared experiences.',
-      color: 'from-blue-500 to-cyan-500'
-    },
-    {
-      icon: Award,
-      title: 'Excellence',
-      description: 'Maintaining the highest standards in all our events and community interactions.',
-      color: 'from-purple-500 to-pink-500'
-    },
-    {
-      icon: Target,
-      title: 'Purpose Driven',
-      description: 'Every initiative is designed to create meaningful impact for Solapur families in Kolhapur.',
-      color: 'from-orange-500 to-red-500'
-    }
-  ];
+    const values = [
+        {
+            icon: Heart,
+            title: 'Community First',
+            description: 'We believe in putting our Solapur community members at the center of everything we do.',
+            color: 'from-red-500 to-pink-500'
+        },
+        {
+            icon: Users,
+            title: 'Cultural Bridge',
+            description: 'Connecting our Solapur roots with our new life in Kolhapur through shared experiences.',
+            color: 'from-blue-500 to-cyan-500'
+        },
+        {
+            icon: Award,
+            title: 'Excellence',
+            description: 'Maintaining the highest standards in all our events and community interactions.',
+            color: 'from-purple-500 to-pink-500'
+        },
+        {
+            icon: Target,
+            title: 'Purpose Driven',
+            description: 'Every initiative is designed to create meaningful impact for Solapur families in Kolhapur.',
+            color: 'from-orange-500 to-red-500'
+        }
+    ];
 
-  const achievements = [
-    { number: '500+', label: 'Solapur Families' },
-    { number: '150+', label: 'Events Hosted' },
-    { number: '15+', label: 'Years of Service' },
-    { number: '98%', label: 'Satisfaction Rate' }
-  ];
+    const achievements = [
+        { number: '500+', label: 'Solapur Families' },
+        { number: '150+', label: 'Events Hosted' },
+        { number: '15+', label: 'Years of Service' },
+        { number: '98%', label: 'Satisfaction Rate' }
+    ];
 
-  const organizers = [
-    {
-      id: 1,
-      name: 'Rajesh Patil',
-      role: 'Community President',
-      bio: 'Leading our community for over 8 years, Rajesh has been instrumental in organizing major events and building strong networks among Solapur families in Kolhapur.',
-      image: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg',
-      experience: '8+ years',
-      specialization: 'Business Networking & Event Management',
-      achievements: ['Founded Annual Family Gathering', 'Established Business Network', '500+ Families Connected'],
-      contact: {
-        email: 'rajesh.patil@karvirvasi.com',
-        phone: '+91 98765 43210',
-        linkedin: 'linkedin.com/in/rajeshpatil'
-      },
-      location: 'Kolhapur',
-      memberSince: '2016'
-    },
-    {
-      id: 2,
-      name: 'Dr. Priya Sharma',
-      role: 'Vice President & Education Head',
-      bio: 'A dedicated educator and community leader, Dr. Priya focuses on youth development and educational initiatives for our community children.',
-      image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg',
-      experience: '6+ years',
-      specialization: 'Education & Youth Development',
-      achievements: ['Youth Leadership Program', 'Educational Scholarships', 'Mentorship Network'],
-      contact: {
-        email: 'priya.sharma@karvirvasi.com',
-        phone: '+91 98765 43211',
-        linkedin: 'linkedin.com/in/priyasharma'
-      },
-      location: 'Kolhapur',
-      memberSince: '2018'
-    },
-    {
-      id: 3,
-      name: 'Sunita Desai',
-      role: 'Cultural Affairs Secretary',
-      bio: 'Passionate about preserving our Maharashtra heritage, Sunita organizes cultural events and festivals that keep our traditions alive.',
-      image: 'https://images.pexels.com/photos/1181524/pexels-photo-1181524.jpeg',
-      experience: '5+ years',
-      specialization: 'Cultural Events & Heritage Preservation',
-      achievements: ['Cultural Festival Series', 'Traditional Arts Workshop', 'Heritage Documentation'],
-      contact: {
-        email: 'sunita.desai@karvirvasi.com',
-        phone: '+91 98765 43212',
-        linkedin: 'linkedin.com/in/sunitadesai'
-      },
-      location: 'Kolhapur',
-      memberSince: '2019'
-    },
-    {
-      id: 4,
-      name: 'Amit Joshi',
-      role: 'Technology & Communications Lead',
-      bio: 'Tech entrepreneur and community innovator, Amit manages our digital presence and develops technology solutions for better community engagement.',
-      image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg',
-      experience: '4+ years',
-      specialization: 'Technology & Digital Innovation',
-      achievements: ['Community App Development', 'Digital Networking Platform', 'Online Event Management'],
-      contact: {
-        email: 'amit.joshi@karvirvasi.com',
-        phone: '+91 98765 43213',
-        linkedin: 'linkedin.com/in/amitjoshi'
-      },
-      location: 'Kolhapur',
-      memberSince: '2020'
-    },
-    {
-      id: 5,
-      name: 'Kavita Bhosale',
-      role: 'Women\'s Welfare & Family Coordinator',
-      bio: 'Dedicated to women empowerment and family welfare, Kavita organizes programs focused on women\'s development and family support services.',
-      image: 'https://images.pexels.com/photos/3184283/pexels-photo-3184283.jpeg',
-      experience: '7+ years',
-      specialization: 'Women Empowerment & Family Services',
-      achievements: ['Women\'s Skill Development', 'Family Support Network', 'Health Awareness Campaigns'],
-      contact: {
-        email: 'kavita.bhosale@karvirvasi.com',
-        phone: '+91 98765 43214',
-        linkedin: 'linkedin.com/in/kavitabhosale'
-      },
-      location: 'Kolhapur',
-      memberSince: '2017'
-    },
-    {
-      id: 6,
-      name: 'Santosh Kulkarni',
-      role: 'Sports & Recreation Director',
-      bio: 'Former state-level athlete, Santosh organizes sports tournaments and recreational activities that promote health and community bonding.',
-      image: 'https://images.pexels.com/photos/1884584/pexels-photo-1884584.jpeg',
-      experience: '5+ years',
-      specialization: 'Sports & Recreation Management',
-      achievements: ['Annual Sports Tournament', 'Youth Fitness Programs', 'Community Recreation Center'],
-      contact: {
-        email: 'santosh.kulkarni@karvirvasi.com',
-        phone: '+91 98765 43215',
-        linkedin: 'linkedin.com/in/santoshkulkarni'
-      },
-      location: 'Kolhapur',
-      memberSince: '2019'
-    }
-  ];
+    const organizers = [
+        {
+            id: 1,
+            name: 'Rajesh Patil',
+            role: 'Community President',
+            bio: 'Leading our community for over 8 years, Rajesh has been instrumental in organizing major events and building strong networks among Solapur families in Kolhapur.',
+            image: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg',
+            experience: '8+ years',
+            specialization: 'Business Networking & Event Management',
+            achievements: ['Founded Annual Family Gathering', 'Established Business Network', '500+ Families Connected'],
+            contact: {
+                email: 'rajesh.patil@karvirvasi.com',
+                phone: '+91 98765 43210',
+                linkedin: 'linkedin.com/in/rajeshpatil'
+            },
+            location: 'Kolhapur',
+            memberSince: '2016'
+        },
+        {
+            id: 2,
+            name: 'Dr. Priya Sharma',
+            role: 'Vice President & Education Head',
+            bio: 'A dedicated educator and community leader, Dr. Priya focuses on youth development and educational initiatives for our community children.',
+            image: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg',
+            experience: '6+ years',
+            specialization: 'Education & Youth Development',
+            achievements: ['Youth Leadership Program', 'Educational Scholarships', 'Mentorship Network'],
+            contact: {
+                email: 'priya.sharma@karvirvasi.com',
+                phone: '+91 98765 43211',
+                linkedin: 'linkedin.com/in/priyasharma'
+            },
+            location: 'Kolhapur',
+            memberSince: '2018'
+        },
+        {
+            id: 3,
+            name: 'Sunita Desai',
+            role: 'Cultural Affairs Secretary',
+            bio: 'Passionate about preserving our Maharashtra heritage, Sunita organizes cultural events and festivals that keep our traditions alive.',
+            image: 'https://images.pexels.com/photos/1181524/pexels-photo-1181524.jpeg',
+            experience: '5+ years',
+            specialization: 'Cultural Events & Heritage Preservation',
+            achievements: ['Cultural Festival Series', 'Traditional Arts Workshop', 'Heritage Documentation'],
+            contact: {
+                email: 'sunita.desai@karvirvasi.com',
+                phone: '+91 98765 43212',
+                linkedin: 'linkedin.com/in/sunitadesai'
+            },
+            location: 'Kolhapur',
+            memberSince: '2019'
+        },
+        {
+            id: 4,
+            name: 'Amit Joshi',
+            role: 'Technology & Communications Lead',
+            bio: 'Tech entrepreneur and community innovator, Amit manages our digital presence and develops technology solutions for better community engagement.',
+            image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg',
+            experience: '4+ years',
+            specialization: 'Technology & Digital Innovation',
+            achievements: ['Community App Development', 'Digital Networking Platform', 'Online Event Management'],
+            contact: {
+                email: 'amit.joshi@karvirvasi.com',
+                phone: '+91 98765 43213',
+                linkedin: 'linkedin.com/in/amitjoshi'
+            },
+            location: 'Kolhapur',
+            memberSince: '2020'
+        },
+        {
+            id: 5,
+            name: 'Kavita Bhosale',
+            role: 'Women\'s Welfare & Family Coordinator',
+            bio: 'Dedicated to women empowerment and family welfare, Kavita organizes programs focused on women\'s development and family support services.',
+            image: 'https://images.pexels.com/photos/3184283/pexels-photo-3184283.jpeg',
+            experience: '7+ years',
+            specialization: 'Women Empowerment & Family Services',
+            achievements: ['Women\'s Skill Development', 'Family Support Network', 'Health Awareness Campaigns'],
+            contact: {
+                email: 'kavita.bhosale@karvirvasi.com',
+                phone: '+91 98765 43214',
+                linkedin: 'linkedin.com/in/kavitabhosale'
+            },
+            location: 'Kolhapur',
+            memberSince: '2017'
+        },
+        {
+            id: 6,
+            name: 'Santosh Kulkarni',
+            role: 'Sports & Recreation Director',
+            bio: 'Former state-level athlete, Santosh organizes sports tournaments and recreational activities that promote health and community bonding.',
+            image: 'https://images.pexels.com/photos/1884584/pexels-photo-1884584.jpeg',
+            experience: '5+ years',
+            specialization: 'Sports & Recreation Management',
+            achievements: ['Annual Sports Tournament', 'Youth Fitness Programs', 'Community Recreation Center'],
+            contact: {
+                email: 'santosh.kulkarni@karvirvasi.com',
+                phone: '+91 98765 43215',
+                linkedin: 'linkedin.com/in/santoshkulkarni'
+            },
+            location: 'Kolhapur',
+            memberSince: '2019'
+        }
+    ];
 
-  return (
-    <div className="min-h-screen">
-      <Header />
-      <main className="bg-gradient-to-br from-slate-50 via-white to-orange-50/30">
-        {/* Hero Section */}
-        <section className="py-16 lg:py-24 relative overflow-hidden">
+    return (
+        <div className="min-h-screen">
+            <Header />
+            <main className="bg-gradient-to-br from-slate-50 via-white to-orange-50/30">
+                {/* Hero Section */}
+                <section className="py-16 lg:py-24 relative overflow-hidden">
           <div className="absolute inset-0 pointer-events-none">
             <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-orange-200/30 to-amber-200/30 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
             <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-200/30 to-pink-200/30 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
@@ -213,7 +213,7 @@ export default function AboutUsPage() {
           </div>
         </section>
 
-        {/* Values Section */}
+                {/* Values Section */}
         <section className="py-16 lg:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
@@ -239,7 +239,7 @@ export default function AboutUsPage() {
           </div>
         </section>
 
-        {/* Community Organizers Section */}
+                {/* Community Organizers Section */}
         <section className="py-16 lg:py-24 bg-white/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
@@ -340,7 +340,7 @@ export default function AboutUsPage() {
           </div>
         </section>
 
-        {/* Achievements Section */}
+                {/* Achievements Section */}
         <section className="py-16 lg:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
@@ -362,7 +362,7 @@ export default function AboutUsPage() {
           </div>
         </section>
 
-        {/* CTA Section */}
+                {/* CTA Section */}
         <section className="py-16 lg:py-24 bg-white/50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
@@ -373,8 +373,8 @@ export default function AboutUsPage() {
               start building meaningful connections today.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
+              <Button
                 asChild 
                 size="lg"
                 className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white px-8 py-3 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
@@ -392,11 +392,12 @@ export default function AboutUsPage() {
               >
                 <Link href="/contact">Contact Us</Link>
               </Button>
+
             </div>
           </div>
         </section>
       </main>
       <Footer />
     </div>
-  );
+    );
 }

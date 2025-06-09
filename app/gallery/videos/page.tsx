@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
+import Image from 'next/image'; // Keep Image if using thumbnails, remove if direct embed
 import Link from 'next/link';
 import { Video, ArrowLeft, Play, Heart, Eye, Calendar, Filter, Search, Grid, List, Share2, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -10,12 +10,36 @@ import { Input } from '@/components/ui/input';
 import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 
+// Simple Modal component (you can replace with a more robust library like shadcn/ui Dialog)
+const VideoModal = ({ videoUrl, onClose }: { videoUrl: string | null; onClose: () => void }) => {
+  if (!videoUrl) return null;
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75" onClick={onClose}>
+      <div className="relative w-full max-w-3xl mx-4 aspect-video" onClick={(e) => e.stopPropagation()}>
+        <iframe
+          className="absolute inset-0 w-full h-full rounded-lg shadow-lg"
+          src={videoUrl}
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        ></iframe>
+        <button onClick={onClose} className="absolute -top-8 right-0 text-white text-2xl">&times;</button>
+      </div>
+    </div>
+  );
+};
+
 export default function VideoGalleryPage() {
   const [viewMode, setViewMode] = useState('grid');
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedVideoUrl, setSelectedVideoUrl] = useState<string | null>(null);
 
   const categories = ['All', 'Events', 'Culture', 'Business', 'Education', 'Highlights', 'Interviews'];
-
+  
+  // NOTE: Replace thumbnail URLs with actual video embed URLs (e.g., YouTube embed URLs)
+  // This example uses placeholder image URLs. You'll need to update the 'url' property
+  // for each video object with the correct embed link.
   const videos = [
     {
       id: 1,
@@ -25,7 +49,8 @@ export default function VideoGalleryPage() {
       date: 'January 2024',
       duration: '8:45',
       views: 2150,
-      likes: 189,
+      likes: 189,      
+      url: 'https://www.youtube.com/embed/your_video_id_1', // **Replace with actual video embed URL**
       description: 'Experience the best moments from our biggest annual celebration bringing together families from across Maharashtra'
     },
     {
@@ -36,6 +61,7 @@ export default function VideoGalleryPage() {
       date: 'December 2023',
       duration: '12:30',
       views: 1890,
+      url: 'https://www.youtube.com/embed/your_video_id_2', // **Replace with actual video embed URL**
       likes: 156,
       description: 'Traditional dance and music performances showcasing the rich cultural heritage of Maharashtra'
     },
@@ -47,6 +73,7 @@ export default function VideoGalleryPage() {
       date: 'November 2023',
       duration: '25:15',
       views: 1650,
+      url: 'https://www.youtube.com/embed/your_video_id_3', // **Replace with actual video embed URL**
       likes: 134,
       description: 'Industry leaders share insights on entrepreneurship and business growth strategies'
     },
@@ -58,6 +85,7 @@ export default function VideoGalleryPage() {
       date: 'October 2023',
       duration: '18:20',
       views: 1420,
+      url: 'https://www.youtube.com/embed/your_video_id_4', // **Replace with actual video embed URL**
       likes: 98,
       description: 'Interactive workshop empowering young minds with leadership skills and career guidance'
     },
@@ -69,6 +97,7 @@ export default function VideoGalleryPage() {
       date: 'September 2023',
       duration: '6:30',
       views: 980,
+      url: 'https://www.youtube.com/embed/your_video_id_5', // **Replace with actual video embed URL**
       likes: 87,
       description: 'Heartwarming stories of how our community service initiatives are making a difference'
     },
@@ -80,6 +109,7 @@ export default function VideoGalleryPage() {
       date: 'August 2023',
       duration: '15:45',
       views: 1320,
+      url: 'https://www.youtube.com/embed/your_video_id_6', // **Replace with actual video embed URL**
       likes: 112,
       description: 'Exciting moments from the championship matches of our annual family sports tournament'
     },
@@ -91,6 +121,7 @@ export default function VideoGalleryPage() {
       date: 'July 2023',
       duration: '22:10',
       views: 1150,
+      url: 'https://www.youtube.com/embed/your_video_id_7', // **Replace with actual video embed URL**
       likes: 95,
       description: 'Celebrating academic achievements and recognizing outstanding students in our community'
     },
@@ -102,6 +133,7 @@ export default function VideoGalleryPage() {
       date: 'June 2023',
       duration: '10:25',
       views: 1780,
+      url: 'https://www.youtube.com/embed/your_video_id_8', // **Replace with actual video embed URL**
       likes: 145,
       description: 'Special performances and activities celebrating our youngest community members'
     },
@@ -113,6 +145,7 @@ export default function VideoGalleryPage() {
       date: 'May 2023',
       duration: '28:40',
       views: 2200,
+      url: 'https://www.youtube.com/embed/your_video_id_9', // **Replace with actual video embed URL**
       likes: 178,
       description: 'Learn authentic Maharashtra recipes from master chefs and experienced home cooks'
     },
@@ -124,6 +157,7 @@ export default function VideoGalleryPage() {
       date: 'April 2023',
       duration: '35:20',
       views: 1950,
+      url: 'https://www.youtube.com/embed/your_video_id_10', // **Replace with actual video embed URL**
       likes: 167,
       description: 'Inspiring interviews with successful entrepreneurs sharing their journey and insights'
     },
@@ -135,6 +169,7 @@ export default function VideoGalleryPage() {
       date: 'March 2023',
       duration: '7:15',
       views: 890,
+      url: 'https://www.youtube.com/embed/your_video_id_11', // **Replace with actual video embed URL**
       likes: 76,
       description: 'Joyful moments from our community picnic with games, food, and family bonding'
     },
@@ -146,6 +181,7 @@ export default function VideoGalleryPage() {
       date: 'March 2023',
       duration: '9:50',
       views: 2450,
+      url: 'https://www.youtube.com/embed/your_video_id_12', // **Replace with actual video embed URL**
       likes: 201,
       description: 'Colorful celebration of Holi with traditional music, dance, and community participation'
     }
@@ -250,7 +286,12 @@ export default function VideoGalleryPage() {
         {/* Video Grid */}
         <section className="pb-16 lg:pb-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            {viewMode === 'grid' ? (
+            {filteredVideos.length === 0 ? (
+              <div className="text-center text-gray-600 py-10">
+                No videos found for the selected category.
+              </div>
+            ) : viewMode === 'grid' ? (
+
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredVideos.map((video) => (
                   <Card key={video.id} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 bg-white/80 backdrop-blur-sm border border-white/50 overflow-hidden">
@@ -267,7 +308,7 @@ export default function VideoGalleryPage() {
                         
                         {/* Play Button */}
                         <div className="absolute inset-0 flex items-center justify-center">
-                          <button className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 hover:scale-110 group-hover:scale-125">
+                          <button onClick={() => setSelectedVideoUrl(video.url)} className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 hover:scale-110 group-hover:scale-125">
                             <Play className="h-8 w-8 ml-1" />
                           </button>
                         </div>
@@ -333,7 +374,7 @@ export default function VideoGalleryPage() {
                           
                           {/* Play Button */}
                           <div className="absolute inset-0 flex items-center justify-center">
-                            <button className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 hover:scale-110">
+                            <button onClick={() => setSelectedVideoUrl(video.url)} className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all duration-300 hover:scale-110">
                               <Play className="h-6 w-6 ml-1" />
                             </button>
                           </div>
@@ -380,7 +421,7 @@ export default function VideoGalleryPage() {
                             </div>
                             
                             <div className="flex gap-2">
-                              <Button size="sm" className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white">
+                              <Button size="sm" onClick={() => setSelectedVideoUrl(video.url)} className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white">
                                 <Play className="mr-2 h-4 w-4" />
                                 Watch
                               </Button>
@@ -398,6 +439,7 @@ export default function VideoGalleryPage() {
             )}
          </div>
         </section>
+        <VideoModal videoUrl={selectedVideoUrl} onClose={() => setSelectedVideoUrl(null)} />
       </main>
       <Footer />
     </div>
